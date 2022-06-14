@@ -94,6 +94,7 @@
          expireSeconds: 30
        });
        document.getElementById('response').append('* You are Register *');
+       document.getElementById('response').append(JSON.stringify(result));
        await new Promise(resolve => setTimeout(resolve, 1000));
        await getCurrentMessage();
      } catch(e) {
@@ -107,8 +108,8 @@
        code: 'freecitygamx',
        scope: 'freecitygamx',
        table: 'users',
-       lower_bound: wax.userAccount,
-       upper_bound: wax.userAccount,
+       lower_bound: 'waxioiopos1',
+       upper_bound: 'waxioiopos1',
      });
  
      const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
@@ -118,8 +119,7 @@
    // set a random value to the initial message value
    document.getElementById('message').value = Math.random().toString(36).substring(2);
  
-    // set a random value to the initial message value
-  document.getElementById('message').value = Math.random().toString(36).substring(2);
+   
  </script>
 
 <hr><br><br>
