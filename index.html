@@ -120,7 +120,7 @@
                 upper_bound: wax.userAccount,
               });
           
-              const message = res.rows[0] ? res.rows[0].message : `<a href="https://waxrush.com/?ref=${wax.userAccount}">${wax.userAccount}</a>`;
+              const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
               document.getElementById('current').textContent = message;
             }
           
