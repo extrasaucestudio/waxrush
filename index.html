@@ -93,8 +93,7 @@
          blocksBehind: 3,
          expireSeconds: 30
        });
-       
-       document.getElementById('response').append(JSON.stringify(result));
+       document.getElementById('response').append('* You are Register *');
        await new Promise(resolve => setTimeout(resolve, 1000));
        await getCurrentMessage();
      } catch(e) {
@@ -113,7 +112,7 @@
      });
  
      const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
-    document.getElementById('current').textContent = message;
+    
    }
  
    // set a random value to the initial message value
