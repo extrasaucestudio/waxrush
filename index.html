@@ -197,7 +197,9 @@
 </tr>
 <tr>
 <td>
-<button id="show">Solo Game</button> - <button id="show2">Multiplayer Game</button>
+    <section class="dhx_sample-controls">
+        <button id="show" class="dhx_sample-btn dhx_sample-btn--flat">Show popup</button>
+    </section>
 </td>
 </tr>
 
@@ -211,7 +213,7 @@
 css: "dhx_widget--bordered"
 });
 
-    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='https://claim.remixworlds.com/' title='Claim RMX Token' height='600' width='325' ></iframe></div>");
+    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='dhtmlx.html' title='' height='600' width='325' ></iframe></div>");
 document.querySelector("#show").addEventListener("click", function () {
 popup.show("show");
     });
@@ -231,34 +233,6 @@ list.data.parse(dataset);
 dhxWindow.attach(list)
 dhxWindow.show();
 </script>
-
-<script>
-    const popup = new dhx.Popup({
-css: "dhx_widget--bordered"
-});
-
-    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='https://google.com' title='Claim RMX Token' height='600' width='325' ></iframe></div>");
-document.querySelector("#show2").addEventListener("click", function () {
-popup.show("show2");
-    });
-
-    const dhxWindow = new dhx.Window({
-width: 440,
-height: 520,
-title: "Window"
-});
-
-const list = new dhx.List(null, {
-css: "dhx_widget--bordered"
-});
-
-list.data.parse(dataset);
-
-dhxWindow.attach(list)
-dhxWindow.show2();
-</script>
-
-
 
 
 
