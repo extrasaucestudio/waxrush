@@ -93,7 +93,7 @@
          blocksBehind: 3,
          expireSeconds: 30
        });
-       document.getElementById('response').append('* You are Register *');
+       
        document.getElementById('response').append(JSON.stringify(result));
        await new Promise(resolve => setTimeout(resolve, 1000));
        await getCurrentMessage();
