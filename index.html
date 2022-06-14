@@ -231,6 +231,7 @@ list.data.parse(dataset);
 dhxWindow.attach(list)
 dhxWindow.show();
 </script>
+
 <script>
     const popup = new dhx.Popup({
 css: "dhx_widget--bordered"
@@ -238,7 +239,7 @@ css: "dhx_widget--bordered"
 
     popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='https://google.com' title='Claim RMX Token' height='600' width='325' ></iframe></div>");
 document.querySelector("#show2").addEventListener("click", function () {
-popup.show("show");
+popup.show("show2");
     });
 
     const dhxWindow = new dhx.Window({
