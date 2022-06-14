@@ -31,22 +31,13 @@
 <center>
     <div id="container" width="75px">
         <header>
-          
           <br>
-<p>WaxRush.com</p>
+<p>WaxRush.com - Wax NFT Distributor</p>
 
         </header>
         <section id="main" align="center">
-<p>Waxio Team Projects Labs
-        <br><br>
-        Welcome, we are the Waxio team. Passionate but especially web development, we focus our efforts on technologies that can be realized from the WAX/EOS blockchain. Here are our different projects.
-        <br><br>
-        <hr><br>
-
-     
-
-
- 1- Click this buttons to login with your wax wallet.
+ 
+Login First
  <br><br>
  <button id="login" onclick=login() >WAX Login</button>
  <label>Wallet:</label><input id="wax.userAccount">
@@ -64,13 +55,7 @@
    const wax = new waxjs.WaxJS({
      rpcEndpoint: 'https://wax.greymass.com'
    });
-   // const wax = new waxjs.WaxJS({
-   //   rpcEndpoint: 'http://wax-all.test:8888',
-   //   tryAutoLogin: true,
-   //   waxSigningURL: 'http://all-access.wax.test:8113',
-   //   waxAutoSigningURL: 'http://idm.wax.test:8113/v1/accounts/auto-accept/'
-   // });
- 
+
    async function login() {
      try {
        const userAccount = await wax.login();
