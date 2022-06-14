@@ -47,6 +47,91 @@
           </tr>
 
                     </table>
+                    <img src="files/wax.svg" alt="WAX Login" width="150px" height="65px">
+                    <br>
+                    Buy random NFT for 1 WAX
+                    <br>
+                    <hr>
+                    <label>updater:</label><input id="updater"><br><br>
+                    <label>message:</label><input id="message"><br><br>
+                    <label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
+                    <button id="sign" onclick=sign() >Sign transaction</button><br><br>
+                    <label>Current Message</label><h3 id="current"></h3><br><br>
+                    <hr>
+                    <label>Transaction Results</label>
+                    <h2 id="response"></h2>
+                    
+                    <script>
+                      
+                      const wax = new waxjs.WaxJS({
+                        rpcEndpoint: 'https://wax.greymass.com'
+                      });
+                    
+                      async function login() {
+                        try {
+                          const userAccount = await wax.login();
+                          document.getElementById('updater').value = userAccount;
+                          await getCurrentMessage();
+                        } catch(e) {
+                          document.getElementById('response').append(e.message);
+                        }
+                      }
+                    
+                      async function sign() {
+                        if(!wax.api) {
+                          return document.getElementById('response').append('* Login first *');
+                        }
+                    
+                        const updater = document.getElementById('updater').value;
+                        const message = document.getElementById('message').value;
+                        const fail = document.getElementById('fail').checked;
+                    
+                        try {
+                          const result = await wax.api.transact({
+                            actions: [{
+                              account: 'test.wax',
+                              name: 'update',
+                              authorization: [{
+                                actor: wax.userAccount,
+                                permission: 'active',
+                              }],
+                              data: {
+                                updater,
+                                message,
+                                fail,
+                              },
+                            }]
+                          }, {
+                            blocksBehind: 3,
+                            expireSeconds: 30
+                          });
+                          document.getElementById('response').append(JSON.stringify(result));
+                          await new Promise(resolve => setTimeout(resolve, 1000));
+                          await getCurrentMessage();
+                        } catch(e) {
+                          document.getElementById('response').append(e.message);
+                        }
+                      }
+                    
+                      async function getCurrentMessage() {
+                        const res = await wax.rpc.get_table_rows({
+                          json: true,
+                          code: 'test.wax',
+                          scope: 'test.wax',
+                          table: 'messages',
+                          lower_bound: wax.userAccount,
+                          upper_bound: wax.userAccount,
+                        });
+                    
+                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
+                        document.getElementById('current').textContent = message;
+                      }
+                    
+                      // set a random value to the initial message value
+                      document.getElementById('message').value = Math.random().toString(36).substring(2);
+                    
+                    </script>
+
             </p>
         </details>
 
@@ -56,87 +141,7 @@
 
 
 
-          <br><br>
-          <hr>
-          <label>updater:</label><input id="updater"><br><br>
-          <label>message:</label><input id="message"><br><br>
-          <label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
-          <button id="sign" onclick=sign() >Sign transaction</button><br><br>
-          <label>Current Message</label><h3 id="current"></h3><br><br>
-          <hr>
-          <label>Transaction Results</label>
-          <h2 id="response"></h2>
           
-          <script>
-            
-            const wax = new waxjs.WaxJS({
-              rpcEndpoint: 'https://wax.greymass.com'
-            });
-          
-            async function login() {
-              try {
-                const userAccount = await wax.login();
-                document.getElementById('updater').value = userAccount;
-                await getCurrentMessage();
-              } catch(e) {
-                document.getElementById('response').append(e.message);
-              }
-            }
-          
-            async function sign() {
-              if(!wax.api) {
-                return document.getElementById('response').append('* Login first *');
-              }
-          
-              const updater = document.getElementById('updater').value;
-              const message = document.getElementById('message').value;
-              const fail = document.getElementById('fail').checked;
-          
-              try {
-                const result = await wax.api.transact({
-                  actions: [{
-                    account: 'test.wax',
-                    name: 'update',
-                    authorization: [{
-                      actor: wax.userAccount,
-                      permission: 'active',
-                    }],
-                    data: {
-                      updater,
-                      message,
-                      fail,
-                    },
-                  }]
-                }, {
-                  blocksBehind: 3,
-                  expireSeconds: 30
-                });
-                document.getElementById('response').append(JSON.stringify(result));
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                await getCurrentMessage();
-              } catch(e) {
-                document.getElementById('response').append(e.message);
-              }
-            }
-          
-            async function getCurrentMessage() {
-              const res = await wax.rpc.get_table_rows({
-                json: true,
-                code: 'test.wax',
-                scope: 'test.wax',
-                table: 'messages',
-                lower_bound: wax.userAccount,
-                upper_bound: wax.userAccount,
-              });
-          
-              const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
-              document.getElementById('current').textContent = message;
-            }
-          
-            // set a random value to the initial message value
-            document.getElementById('message').value = Math.random().toString(36).substring(2);
-          
-          </script>
  
 
 
