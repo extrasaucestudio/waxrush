@@ -41,8 +41,10 @@
           
           <tr>
             <td><button id="login" onclick=login() >WAX Login</button></td>
+            <td><h3 id="current"></h3></td>
           </tr>
           <tr>
+            <td><h3 id="current"></h3></td>
             <td><h3 id="current"></h3></td>
           </tr>
 
@@ -118,8 +120,7 @@
                 upper_bound: wax.userAccount,
               });
           
-              const message = res.rows[0] ? res.rows[0].message : `
-<a href="https://waxrush.com/?ref=${wax.userAccount}">${wax.userAccount}</a>`;
+              const message = res.rows[0] ? res.rows[0].message : `<a href="https://waxrush.com/?ref=${wax.userAccount}">${wax.userAccount}</a>`;
               document.getElementById('current').textContent = message;
             }
           
