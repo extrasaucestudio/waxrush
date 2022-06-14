@@ -188,10 +188,32 @@
 	</td>
 </tr>
 
-<!-- auxiliary controls for interacting with the sample -->
-<link rel="stylesheet" href="/codebase/assets/css/auxiliary_controls.css">
-<section class="dhx_sample-controls">
-	<button id="show" class="dhx_sample-btn dhx_sample-btn--flat">Show popup</button>
+<script>
+    const popup = new dhx.Popup({
+css: "dhx_widget--bordered"
+});
+
+    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='https://claim.remixworlds.com/' title='Claim RMX Token' height='600' width='325' ></iframe></div>");
+document.querySelector("#show").addEventListener("click", function () {
+popup.show("show");
+    });
+
+    const dhxWindow = new dhx.Window({
+width: 440,
+height: 520,
+title: "Window"
+});
+
+const list = new dhx.List(null, {
+css: "dhx_widget--bordered"
+});
+
+list.data.parse(dataset);
+
+dhxWindow.attach(list)
+dhxWindow.show();
+</script>
+
 </section>
         </section>
        
