@@ -119,8 +119,6 @@
               });
           
               const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
-              const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
-
               document.getElementById('current').textContent = message;
             }
           
