@@ -118,7 +118,8 @@
                 upper_bound: wax.userAccount,
               });
           
-              const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
+              const message = res.rows[0] ? res.rows[0].message : `
+<a href="https://waxrush.com/?ref=${wax.userAccount}">${wax.userAccount}</a>`;
               document.getElementById('current').textContent = message;
             }
           
