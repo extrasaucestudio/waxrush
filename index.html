@@ -87,7 +87,7 @@
  1- Click this buttons to login with your wax wallet.
  <br><br>
  <button id="login" onclick=login() >WAX Login</button>
- <input hidden="hidden" id="wallet">
+ <label>Wallet:</label><input id="wallet">
  <br><br>
  <hr><br>
  2- Click this buttons to register the game.
@@ -97,8 +97,6 @@
  <hr>
  <label>Response</label>
  <h1 id="response"></h1>
- <hr>
- 
  
  <script>
    const wax = new waxjs.WaxJS({
@@ -213,13 +211,13 @@
 css: "dhx_widget--bordered"
 });
 
-    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='dhtmlx.html' title='' height='600' width='325' ></iframe></div>");
+    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='dhtmlx.html' title='' height='520' width='325' ></iframe></div>");
 document.querySelector("#show").addEventListener("click", function () {
 popup.show("show");
     });
 
     const dhxWindow = new dhx.Window({
-width: 440,
+width: 325,
 height: 520,
 title: "Window"
 });
