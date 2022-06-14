@@ -35,13 +35,13 @@
         </header>
         <section id="main" align="center">
  
-          <h1 id="wallet"></h1>
+          
  <br><br>
  <button id="login" onclick=login() >WAX Login</button>
  <label>wallet:</label><input id="wallet">
  <br><br>
 
-
+ <h1 id="wallet"></h1>
 
  <hr><br>
  2- Click this buttons to register the game.
@@ -112,6 +112,7 @@
      });
  
      const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
+    document.getElementById('current').textContent = message;
    }
  
    // set a random value to the initial message value
