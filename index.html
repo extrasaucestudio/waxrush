@@ -112,6 +112,7 @@
                           });
                           document.getElementById('response').append('* You are Register *');
                           document.getElementById('response').append(JSON.stringify(result));
+                          console.log('result'); 
                           await new Promise(resolve => setTimeout(resolve, 1000));
                           await getCurrentMessage();
                         } catch(e) {
