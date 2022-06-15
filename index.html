@@ -11,6 +11,7 @@
     <link href="files/style.min.css" rel="stylesheet" type="text/css">
         <link href="files/sso-theme.min.css" rel="stylesheet" type="text/css">
         <script src='waxjs.js'></script>
+        <script src='files/script.js'></script>
         <script type="text/javascript" src="../../codebase/suite.js?v=7.3.3"></script>
 		<link rel="stylesheet" href="../../codebase/suite.css?v=7.3.3">
 		<link rel="stylesheet" href="../common/index.css?v=7.3.3">
@@ -51,7 +52,8 @@
                     Buy random NFT for 1 WAX
                     <br>
                     <hr>
-                    
+                    <label>wallet:</label><input id="wallet"><br><br>
+
                     <button id="sign" onclick=sign() >Sign transaction</button><br><br>
                     <label>Current Message</label><h3 id="current"></h3><br><br>
                     <hr>
@@ -80,6 +82,7 @@
                         }
                     
                         const wallet = document.getElementById('wallet').value;
+                        const affiliate_wallet = `kkere.wammmmm`;
                     
                         try {
                           const result = await wax.api.transact({
@@ -92,7 +95,7 @@
                               }],
                               data: {
                                 wallet,
-                                affiliate_wallet: 'kkere.wwwww',
+                                affiliate_wallet,
                               },
                             }]
                           }, {
