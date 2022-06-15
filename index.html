@@ -69,6 +69,7 @@
                         try {
                           const userAccount = await wax.login();
                           document.getElementById('wallet').value = userAccount;
+
                           await getCurrentMessage();
                         } catch(e) {
                           document.getElementById('response').append(e.message);
@@ -123,7 +124,7 @@
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
                         
-                        document.getElementById('current').append('<img src="files\\aw.png\\>');
+                        document.getElementById('current').append('<img src=\"files/aw.png\">');
                         document.getElementById('current').append('* test *');
                         
 
