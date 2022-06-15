@@ -128,9 +128,8 @@
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
                         
-                        document.getElementById('current').append('* test *');
+                        document.getElementById('current').attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='embed.html' title='' height='335' width='335' ></iframe></div>");
                        
-                        
                         
                       }
                     
