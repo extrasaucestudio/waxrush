@@ -49,7 +49,7 @@
                     </table>
                     <img src="files/aw.png" alt="NFT Distributor" width="40%">
                     <br>
-                    Buy random NFT for 1 WAX
+                    Random NFT distributor (1 WAX)
                    
                     <label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden"><br><br>
 
@@ -119,7 +119,7 @@
        upper_bound: 'waxioiopos1',
                         });
                     
-                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
+                        const message = res.rows[0] ? res.rows[0].message : `<img src="files/aw.png" alt="NFT Distributor" width="40%"> ${affiliate_wallet} ${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
                       }
                     
