@@ -175,7 +175,7 @@
             <div class="dhx_sample-header__content">
             </h1>
     <section class="dhx_sample-controls">
-        <button id="show" class="dhx_sample-btn dhx_sample-btn--flat">Show popup</button>
+        <button id="show" class="dhx_sample-btn dhx_sample-btn--flat">Embed this tool</button>
     </section>
 </header>
 
@@ -184,7 +184,7 @@
 css: "dhx_widget--bordered"
 });
 
-    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='dhtmlx.html' title='' height='520' width='325' ></iframe></div>");
+    popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='embed.html' title='' height='520' width='325' ></iframe></div>");
 document.querySelector("#show").addEventListener("click", function () {
 popup.show("show");
     });
