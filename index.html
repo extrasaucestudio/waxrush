@@ -122,9 +122,9 @@
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
+                        
+                        document.getElementById('current').append('<img src="files\aw.png\">');
                         document.getElementById('current').append('* test *');
-                        document.getElementById('current').write('<img src="files\aw.png\">');
-
                         
 
                       }
