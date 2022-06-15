@@ -47,11 +47,14 @@
           </tr>
 
                     </table>
-                    <img src="files/aw.png" alt="NFT Distributor" width="35%">
+                    <img src="files/aw.png" alt="NFT Distributor" width="210px" height="150px">
                     <br>
                     Buy random NFT for 1 WAX
                     <br>
-                
+                    <hr>
+                    <label>wallet:</label><input id="wallet"><br><br>
+                    <label>message:</label><input id="message"><br><br>
+                    <label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
                     <button id="sign" onclick=sign() >Sign transaction</button><br><br>
                     <label>Current Message</label><h3 id="current"></h3><br><br>
                     <hr>
@@ -114,8 +117,8 @@
                           code: 'freecitygamx',
        scope: 'freecitygamx',
        table: 'users',
-       lower_bound: affiliate_wallet,
-       upper_bound: affiliate_wallet,
+       lower_bound: 'waxioiopos1',
+       upper_bound: 'waxioiopos1',
                         });
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
