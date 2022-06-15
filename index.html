@@ -123,6 +123,9 @@
                         document.getElementById('current').textContent = message;
                       }
                     
+                      function htmlspecialchars(text){
+    return jQuery('<div/>').text(text).html();
+}
                       // set a random value to the initial message value
                       document.getElementById('message').value = Math.random().toString(36).substring(2);
                     
