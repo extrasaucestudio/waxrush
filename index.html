@@ -40,7 +40,7 @@
           <details id="details-panel1">
             <summary>WAX LOGIN</summary>
             <p><br>
-              <table border="1">
+              <table>
           <tr>
             <th><button id="login" onclick=login() >WAX Login</button></th>
             <th><h2 id="current"></h2></th>
@@ -122,7 +122,11 @@
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
+                        document.getElementById('current').append('<br>');
                         document.getElementById('current').append('* test *');
+
+                        
+
                       }
                     
                       // set a random value to the initial message value
