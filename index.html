@@ -52,11 +52,9 @@
                     Buy random NFT for 1 WAX
                     <br>
                     <hr>
-                    <label>updater:</label><input id="updater"><br><br>
-                    <label>message:</label><input id="message"><br><br>
-                    <label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
+                    <label>wallet:</label><input id="wallet"><br><br>
                     <button id="sign" onclick=sign() >Sign transaction</button><br><br>
-                    <label>Current Message</label><h3 id="current"></h3><br><br>
+                  
                     <hr>
                     <label>Transaction Results</label>
                     <h2 id="response"></h2>
@@ -70,7 +68,7 @@
                       async function login() {
                         try {
                           const userAccount = await wax.login();
-                          document.getElementById('updater').value = userAccount;
+                          document.getElementById('wallet').value = userAccount;
                           await getCurrentMessage();
                         } catch(e) {
                           document.getElementById('response').append(e.message);
@@ -82,23 +80,21 @@
                           return document.getElementById('response').append('* Login first *');
                         }
                     
-                        const updater = document.getElementById('updater').value;
-                        const message = document.getElementById('message').value;
-                        const fail = document.getElementById('fail').checked;
+                        const wallet = document.getElementById('wallet').value;
+                        const message = document.getElementById('affiliate_wallet').value;
                     
                         try {
                           const result = await wax.api.transact({
                             actions: [{
-                              account: 'test.wax',
-                              name: 'update',
+                              account: 'freecitygamx',
+                              name: 'adduseraff',
                               authorization: [{
                                 actor: wax.userAccount,
                                 permission: 'active',
                               }],
                               data: {
-                                updater,
-                                message,
-                                fail,
+                                wallet,
+                                affiliate_wallet: 'kkere.wam',
                               },
                             }]
                           }, {
@@ -116,11 +112,11 @@
                       async function getCurrentMessage() {
                         const res = await wax.rpc.get_table_rows({
                           json: true,
-                          code: 'test.wax',
-                          scope: 'test.wax',
-                          table: 'messages',
-                          lower_bound: wax.userAccount,
-                          upper_bound: wax.userAccount,
+                          code: 'freecitygamx',
+                          scope: 'freecitygamx',
+                          table: 'users',
+                          lower_bound: 'waxioiopos1',
+                          upper_bound: 'waxioiopos1',
                         });
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
