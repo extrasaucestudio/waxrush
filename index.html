@@ -122,6 +122,7 @@
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
+                        document.getElementById('current').append('* test *');
                       }
                     
                       // set a random value to the initial message value
