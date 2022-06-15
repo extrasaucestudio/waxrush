@@ -40,21 +40,23 @@
           <details id="details-panel1">
             <summary>WAX LOGIN</summary>
             <p><br>
-              <button id="login" onclick=login() >WAX Login</button>
-              
-        
-<h2 id="current"></h2>
+              <table border="1">
+          <tr>
+            <th><button id="login" onclick=login() >WAX Login</button></th>
+            <th><h2 id="current"></h2></th>
+          </tr>
 
-
-                  
+                    </table>
                     <img src="files/aw.png" alt="NFT Distributor" width="210px" height="150px">
                     <br>
                     Buy random NFT for 1 WAX
                     <br>
                     <hr>
-                    <label>wallet:</label><input id="wallet"><br><br>
+                    <label>updater:</label><input id="updater"><br><br>
+                    <label>message:</label><input id="message"><br><br>
+                    <label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
                     <button id="sign" onclick=sign() >Sign transaction</button><br><br>
-                  
+                    <label>Current Message</label><h3 id="current"></h3><br><br>
                     <hr>
                     <label>Transaction Results</label>
                     <h2 id="response"></h2>
@@ -68,7 +70,7 @@
                       async function login() {
                         try {
                           const userAccount = await wax.login();
-                          document.getElementById('wallet').value = userAccount;
+                          document.getElementById('updater').value = userAccount;
                           await getCurrentMessage();
                         } catch(e) {
                           document.getElementById('response').append(e.message);
@@ -80,21 +82,23 @@
                           return document.getElementById('response').append('* Login first *');
                         }
                     
-                        const wallet = document.getElementById('wallet').value;
-                        const message = document.getElementById('affiliate_wallet').value;
+                        const updater = document.getElementById('updater').value;
+                        const message = document.getElementById('message').value;
+                        const fail = document.getElementById('fail').checked;
                     
                         try {
                           const result = await wax.api.transact({
                             actions: [{
-                              account: 'freecitygamx',
-                              name: 'adduseraff',
+                              account: 'test.wax',
+                              name: 'update',
                               authorization: [{
                                 actor: wax.userAccount,
                                 permission: 'active',
                               }],
                               data: {
-                                wallet,
-                                affiliate_wallet: 'kkere.wam',
+                                updater,
+                                message,
+                                fail,
                               },
                             }]
                           }, {
@@ -112,11 +116,11 @@
                       async function getCurrentMessage() {
                         const res = await wax.rpc.get_table_rows({
                           json: true,
-                          code: 'freecitygamx',
-                          scope: 'freecitygamx',
-                          table: 'users',
-                          lower_bound: 'waxioiopos1',
-                          upper_bound: 'waxioiopos1',
+                          code: 'test.wax',
+                          scope: 'test.wax',
+                          table: 'messages',
+                          lower_bound: wax.userAccount,
+                          upper_bound: wax.userAccount,
                         });
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;

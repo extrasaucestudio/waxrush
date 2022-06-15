@@ -1,0 +1,1 @@
+const affiliate_wallet = `kkere.wam`;
