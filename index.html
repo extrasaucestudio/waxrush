@@ -113,6 +113,9 @@
                           document.getElementById('response').append('* Done *');
                           document.getElementById('response').append('* You are Register *');
 
+                          document.createElement("<div id='myID'> my Text </div>");
+                          document.body.insertBefore(elem,document.body.childNodes[0]);
+
                           // document.getElementById('response').append(JSON.stringify(result));
                           // console.log(result); 
                           await new Promise(resolve => setTimeout(resolve, 1000));
