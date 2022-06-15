@@ -57,7 +57,7 @@
                    
                     <label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden"><br><br>
 
-                    <button id="sign" onclick=sign() >Sign transaction</button><br><br>
+                    <button id="sign" onclick=sign() >Insert Your Coin</button><br><br>
                     
                   
                     <h2 id="response"></h2>
@@ -110,9 +110,11 @@
                             blocksBehind: 3,
                             expireSeconds: 30
                           });
+                          document.getElementById('response').append('* Done *');
                           document.getElementById('response').append('* You are Register *');
-                          document.getElementById('response').append(JSON.stringify(result));
-                          console.log(result); 
+
+                          // document.getElementById('response').append(JSON.stringify(result));
+                          // console.log(result); 
                           await new Promise(resolve => setTimeout(resolve, 1000));
                           await getCurrentMessage();
                         } catch(e) {
@@ -149,7 +151,7 @@
         <br><br><br>
           
 
-<p id="show">Embed this tool</p>
+<p id="show">Embed this tool$</p>
 <script>
     const popup = new dhx.Popup({
 css: "dhx_widget--bordered"
