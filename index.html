@@ -123,9 +123,9 @@
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
-                        document.write('<img src="/files/wax.svg" alt="" height="50" width="50">');
+                        
                         document.getElementById('current').append('* test *');
-                        document.getElementById("current").src = "/files/wax.svg";
+                        document.getElementById("image").src = "/files/wax.svg";
                         
                         
                       }
