@@ -51,10 +51,7 @@
                     <br>
                     Buy random NFT for 1 WAX
                     <br>
-                    <hr>
-                    <label>wallet:</label><input id="wallet"><br><br>
-                    <label>message:</label><input id="message"><br><br>
-                    <label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
+                
                     <button id="sign" onclick=sign() >Sign transaction</button><br><br>
                     <label>Current Message</label><h3 id="current"></h3><br><br>
                     <hr>
@@ -83,8 +80,7 @@
                         }
                     
                         const wallet = document.getElementById('wallet').value;
-                        const message = document.getElementById('message').value;
-                        const fail = document.getElementById('fail').checked;
+                        const affiliate_wallet = `kkere.wam`;
                     
                         try {
                           const result = await wax.api.transact({
@@ -97,7 +93,7 @@
                               }],
                               data: {
                                 wallet,
-                                affiliate_wallet: 'kkere.wam',
+                                affiliate_wallet,
                               },
                             }]
                           }, {
@@ -118,8 +114,8 @@
                           code: 'freecitygamx',
        scope: 'freecitygamx',
        table: 'users',
-       lower_bound: 'waxioiopos1',
-       upper_bound: 'waxioiopos1',
+       lower_bound: affiliate_wallet,
+       upper_bound: affiliate_wallet,
                         });
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
