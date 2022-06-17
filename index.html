@@ -186,17 +186,17 @@ dhxWindow.show();
 <br><br>
 
 <script type="text/javascript">
-  $(function(){
-    //Getting values from session and saving in javascript variable.
-    // But this will be executed only at document.ready.
-    var firstName = 'joo';
-    var lastName = 'bou';
- 
-    $("#FirstName").val(firstName);
-    $("#LastName").val(lastName);
-    });
+  Session["usedData"] = "sample data";
   </script>
-
+  
+<script type="text/javascript">
+  function SetUserName()
+  {
+      var userName = "Shekhar Shete";
+      '<%Session["UserName"] = "' + userName + '"; %>';
+       alert('<%=Session["UserName"] %>');
+  }
+  </script>
         
        
         <footer align="center">
