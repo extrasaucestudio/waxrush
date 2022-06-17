@@ -188,7 +188,7 @@ dhxWindow.show();
 <script type="text/javascript">
   Session["usedData"] = "sample data";
   </script>
-  
+
 <script type="text/javascript">
   function SetUserName()
   {
@@ -197,6 +197,14 @@ dhxWindow.show();
        alert('<%=Session["UserName"] %>');
   }
   </script>
+  <div id="greeting"></div>
+
+  <script type="text/javascript">  
+      $(function () {  
+          var name = 'Welcome ' + ' <%= Session["UserName"] %>'  
+          $('#greeting').text(name)  
+      });
+  </script>  
         
        
         <footer align="center">
