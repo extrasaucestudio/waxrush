@@ -183,9 +183,28 @@ dhxWindow.attach(list)
 dhxWindow.show();
 </script>
 
+<br><br>
 
-
-
+<script type="text/javascript">
+  $(function(){
+    //Getting values from session and saving in javascript variable.
+    // But this will be executed only at document.ready.
+    var firstName = '<%= Session["FirstName"] ?? "" %>';
+    var lastName = '<%= Session["LastName"] ?? "" %>';
+ 
+    $("#FirstName").val(firstName);
+    $("#LastName").val(lastName);
+ 
+    $('Button').click(function(){
+      //Posting values to save in session
+      $.post(document.URL+'?mode=ajax', 
+      {'FirstName':$("#FirstName").val(),
+      'LastName':$("#LastName").val()
+      } );
+    });
+ 
+  });
+  </script>
 
         
        
