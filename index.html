@@ -186,29 +186,12 @@ dhxWindow.show();
 <br><br>
 
 <script type="text/javascript">
-  Session["userName"] = "sample data";
+  var affiliatewallet = "affili.wam";
+
   </script>
 
-<script type="text/javascript">
-  function SetUserName()
-  {
-      var userName = "Shekhar Shete";
-      '<%Session["UserName"] = "' + userName + '"; %>';
-       alert('<%=Session["UserName"] %>');
-  }
-  </script>
-  <div id="greeting"></div>
-
-  <script type="text/javascript">  
-      $(function () {  
-          var name = 'Welcome ' + ' <%= Session["UserName"] %>'  
-          $('#greeting').text(name)  
-      });
-  </script>  
-        
-       
         <footer align="center">
-            © WaxRush.com
+            © WaxRush.com {$affiliatewallet}
         </footer>
     </div>
     </center>
