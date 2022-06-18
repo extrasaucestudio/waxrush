@@ -57,6 +57,8 @@
 
                     <script>
                       const affiliate_wallet = `kkere.wamm`;
+                      const user_wallet = userAccount;
+
                       const wax = new waxjs.WaxJS({
                         rpcEndpoint: 'https://wax.greymass.com'
                       });
@@ -124,7 +126,7 @@
                         });
                     
                         
-                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount} ${affiliate_wallet}`;
+                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount} ${affiliate_wallet} ${user_wallet}`;
                         document.getElementById('current').textContent = message;
                         
 
