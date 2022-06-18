@@ -124,9 +124,9 @@
                         });
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
-                        document.getElementById('current').textContent = message;
+                        document.getElementById('current').value = message;
 
-                        document.getElementById('current').value = `${wax.userAccount}`;
+                        document.getElementById('current').textContent = `${wax.userAccount}`;
 
                         // document.getElementById('current').textContent = ('<p>');
                         // document.getElementById('current').textContent = ('working');
