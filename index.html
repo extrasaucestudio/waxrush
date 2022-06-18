@@ -38,23 +38,13 @@
             <summary>WAX LOGIN</summary>
 
             <section id="main">
-            <p>
-              
-             
-          
-            <img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"><br>
-            <h2 id="current"></h2>
-          
-
-                   
-</p>
-
-
+            <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"><br>
+            <h2 id="current"></h2></p>
 
                     <img src="files/waxrush-nft.gif" alt="NFT Distributor" width="40%">
                     <br>
                     Random NFT distributor (1 WAX)
-                   
+
                     <label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden"><br><br>
 
                     
@@ -64,10 +54,6 @@
                   
                     <h2 id="response"></h2>
                     
-
-
-
-
 
                     <script>
                       
@@ -139,9 +125,12 @@
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
-                        document.getElementById('current').textContent = ('<p>');
-                        document.getElementById('current').textContent = ('working');
-                        document.getElementById('current').textContent = ('</p>');
+
+                        document.getElementById('current').value = userAccount;
+
+                        // document.getElementById('current').textContent = ('<p>');
+                        // document.getElementById('current').textContent = ('working');
+                        // document.getElementById('current').textContent = ('</p>');
                         
                       }
                     
