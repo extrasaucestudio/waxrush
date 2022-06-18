@@ -27,13 +27,14 @@
 </script>
 <script>
   const affiliate_wallet = `xxxxx.wam`;
+  document.getElementById('affiliate_wallet').append = `${affiliate_wallet}`;
 </script>
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
 <center>
     <div id="container">
 <img src="files/waxrush.png" alt="NFT Distributor" width="20%"><br>
-<p>Random WAX NFT Distributor</p>
+<p>Random WAX NFT Distributor {affiliate_wallet}</p>
         
         
           <details id="details-panel1">
@@ -41,7 +42,7 @@
 
             <section id="main">
             <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"><br>
-            <h2 id="current"></h2><h2 id="current2"></h2></p>
+            <h2 id="current"></h2><h2 id="current2"></h2><h2 id="affiliate_wallet"></h2></p>
 
                     <img src="files/waxrush-nft.gif" alt="NFT Distributor" width="40%">
                     <br>
@@ -56,11 +57,6 @@
                   
                     <h2 id="response"></h2>
                     
-
-
-<script>
-  const affiliate_wallet = `kkere.wamm`;
-</script>
 
                     <script>
                       
