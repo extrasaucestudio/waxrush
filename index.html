@@ -32,6 +32,9 @@ var url = new URL(url_string);
 var ref = url.searchParams.get("ref") || 'kkere.wam';
 const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
 </script>
+<script>
+var username = wax.userAccount;
+</script>
 
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
@@ -39,6 +42,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
     <div id="container">
 <img src="files/waxrush.png" alt="NFT Distributor" width="20%"><br>
 <p>Random WAX NFT Distributor</p>
+<p id="username"></p>
 
           <details id="details-panel1">
             <summary>WAX LOGIN</summary>
