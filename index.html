@@ -27,20 +27,12 @@
 </script>
 
 <script>
-  /// const ref = queryString.split('#')[0];
-  // const original = getAllUrlParams().ref;
-  // const ref = decodeURIComponent(original);
-
-  // var query = window.location.search.substring(1);
-  // var qs = parse_query_string(query);
-
-
-var url_string = window.location.href; //window.location.href
+var url_string = window.location.href;
 var url = new URL(url_string);
 var ref = url.searchParams.get("ref");
 const affiliate_wallet = url.searchParams.get("ref");
-console.log(ref);
 </script>
+
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
 <center>
@@ -51,7 +43,9 @@ console.log(ref);
 <p id="ref"></p>
 
         <script>
+          if (elem); // or !elem
           document.write(affiliate_wallet);
+          if (elem != null);
         </script>
 <script>
   document.write(ref);
