@@ -39,7 +39,7 @@
 
             <section id="main">
             <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"><br>
-            <h2 id="current"></h2></p>
+            <h2 id="current"></h2><h2 id="current2"></h2></p>
 
                     <img src="files/waxrush-nft.gif" alt="NFT Distributor" width="40%">
                     <br>
@@ -126,7 +126,7 @@
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
 
-                        document.getElementById('current').textContent = `${wax.userAccount}2`;
+                        document.getElementById('current2').textContent = `${wax.userAccount}2`;
 
                         // document.getElementById('current').textContent = ('<p>');
                         // document.getElementById('current').textContent = ('working');
