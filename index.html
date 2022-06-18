@@ -119,14 +119,14 @@
                         const res = await wax.rpc.get_table_rows({
                           json: true,
                           code: 'freecitygamx',
-       scope: 'freecitygamx',
-       table: 'users',
-       lower_bound: 'waxioiopos1',
-       upper_bound: 'waxioiopos1',
+                          scope: 'freecitygamx',
+                          table: 'users',
+                          lower_bound: 'waxioiopos1',
+                          upper_bound: 'waxioiopos1',
                         });
                     
                         
-                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount} ${affiliate_wallet} ${wax.user_wallet}`;
+                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount} ${affiliate_wallet}`;
                         document.getElementById('current').textContent = message;
                         
 
