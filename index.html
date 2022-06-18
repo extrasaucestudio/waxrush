@@ -29,11 +29,7 @@
 <script>
 var url_string = window.location.href;
 var url = new URL(url_string);
-if(!ref) {
-    var ref;
-    ref = "xxxxx.wam";
-}
-var ref = url.searchParams.get("ref");
+var ref = url.searchParams.get("ref") || 'xxxyx.wam';
 const affiliate_wallet = url.searchParams.get("ref");
 </script>
 
