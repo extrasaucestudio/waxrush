@@ -30,7 +30,8 @@
 </script>
 <script>
   // const ref = queryString.split('#')[0];
-  const ref = getAllUrlParams().ref;
+  const original = getAllUrlParams().ref;
+  const ref = decodeURIComponent(original);
 </script>
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
