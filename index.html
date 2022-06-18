@@ -138,10 +138,10 @@
                         });
                     
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
-                        document.getElementById('current').textContent = message;
-                        document.getElementById('current').write('<p>');
-                          document.getElementById('current').write('sdfgsfgsdg');
-                            document.getElementById('current').write('</p>');
+                        document.write('current').textContent = message;
+                        document.write('current').append('<p>');
+                          document.write('current').append('sdfgsfgsdg');
+                            document.write('current').append('</p>');
                         
                       }
                     
