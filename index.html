@@ -25,17 +25,20 @@
 
   gtag('config', 'G-YJHTL314PP');
 </script>
-<script>
-  const affiliate_wallet = `xxxxx.wam`;
-</script>
+
 <script>
   /// const ref = queryString.split('#')[0];
   // const original = getAllUrlParams().ref;
   // const ref = decodeURIComponent(original);
 
+  // var query = window.location.search.substring(1);
+  // var qs = parse_query_string(query);
+
+
 var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
 var ref = url.searchParams.get("ref");
+const affiliate_wallet = url.searchParams.get("ref");
 console.log(ref);
 </script>
 </head>
