@@ -27,7 +27,7 @@
 </script>
 <script>
   const affiliate_wallet = `xxxxx.wam`;
-  const ref = urlString.split('?')[ref];
+  const ref = urlParams.get('ref')
 </script>
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
@@ -40,6 +40,7 @@
 
         <script>
           document.write(affiliate_wallet);
+          document.write(ref);
         </script>
 
 
