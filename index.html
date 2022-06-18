@@ -33,7 +33,7 @@
   // const original = getAllUrlParams().ref;
   // const ref = decodeURIComponent(original);
 
-var url_string = "https://www.waxrush.com/?ref="; //window.location.href
+var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
 var ref = url.searchParams.get("ref");
 console.log(ref);
