@@ -126,16 +126,16 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                           code: 'freecitygamx',
        scope: 'freecitygamx',
        table: 'users',
-       lower_bound: 'waxioiopos1',
-       upper_bound: 'waxioiopos1',
+       lower_bound: ref,
+       upper_bound: ref,
                         });
                     
                         
-                        const message = res.rows[0] ? res.rows[0].message : `1${wax.userAccount} 2${ref}`;
+                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
                         
 
-                        document.getElementById('current2').append = `current2`;
+                        //document.getElementById('current2').append = `current2`;
 
                         // document.getElementById('current').textContent = ('<p>');
                         // document.getElementById('current').textContent = ('working');
