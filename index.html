@@ -56,7 +56,7 @@
                     
 
                     <script>
-                      
+                      const affiliate_wallet = `kkere.wamm`;
                       const wax = new waxjs.WaxJS({
                         rpcEndpoint: 'https://wax.greymass.com'
                       });
@@ -78,7 +78,7 @@
                         }
                     
                         const wallet = document.getElementById('wallet').value;
-                        const affiliate_wallet = `kkere.wamm`;
+                        
                     
                         try {
                           const result = await wax.api.transact({
@@ -123,7 +123,7 @@
        upper_bound: 'waxioiopos1',
                         });
                     
-                        const affiliate_wallet = `affil.wam`;
+                        
                         const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount} ${affiliate_wallet}`;
                         document.getElementById('current').textContent = message;
                         
