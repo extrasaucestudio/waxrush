@@ -123,8 +123,10 @@
        upper_bound: 'waxioiopos1',
                         });
                     
-                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount} ${wax.affiliate_wallet}`;
+                        const affiliate_wallet = `kkere.wamm`;
+                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount} ${affiliate_wallet}`;
                         document.getElementById('current').textContent = message;
+                        
 
                         document.getElementById('current2').append = `${wax.userAccount}`;
 
