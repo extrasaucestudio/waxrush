@@ -30,8 +30,13 @@
 </script>
 <script>
   // const ref = queryString.split('#')[0];
-  const original = getAllUrlParams().ref;
-  const ref = decodeURIComponent(original);
+  // const original = getAllUrlParams().ref;
+  // const ref = decodeURIComponent(original);
+
+var url_string = "https://www.waxrush.com/?ref="; //window.location.href
+var url = new URL(url_string);
+var ref = url.searchParams.get("ref");
+console.log(ref);
 </script>
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
