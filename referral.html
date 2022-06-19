@@ -54,18 +54,13 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <br>
             <p>iframe</p>
             <br>
-
-            <textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><p id="current"></p></textarea>
+            <p id="current3"></p>
+            
             
 
-            <script>
-              document.write('<p><textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><iframe src='https://waxrush.com/?ref=');
-              document.write(wallet);
-              document.write('' title='' height='325' width='325' >');
-              document.write('</iframe></textarea></p>');
-              </script>
+           
 
-              <script>document.write(wallet);</script>
+              
 
             <textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><iframe src='https://waxrush.com/?ref=${wallet}' title='' height='325' width='325' ></iframe></textarea>
          
@@ -157,6 +152,11 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                         const message = res.rows[0] ? res.rows[0].message : `<iframe src="https://waxrush.com/?ref=${wax.userAccount}"" height="325" width="325" ></iframe>`;
                         document.getElementById('current').textContent = message;
                         document.getElementById('current2').textContent = wax.userAccount;
+                        document.getElementById('current3').textContent = `<textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><iframe src="https://waxrush.com/?ref=${wax.userAccount}"" height="325" width="325" ></iframe></textarea>`;
+                        
+
+
+
                         
 
                         //document.getElementById('current2').append = `current2`;
