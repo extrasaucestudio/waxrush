@@ -57,7 +57,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <p>1 - Login with your WAX wallet.</p>
             <br>
             <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"></p>
-              <br><br>
+              <br>
             <h2 id="current"></h2>
        
             <br><hr><br>
@@ -161,8 +161,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                         
                         const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
-                        document.getElementById('current2').textContent = message;
-
+                        
                         //document.getElementById('current2').append = `current2`;
 
                         // document.getElementById('current').textContent = ('<p>');
