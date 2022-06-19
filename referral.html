@@ -65,6 +65,8 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <img id="sign" onclick=sign() src="files/signup.png" alt="NFT Distributor" width="50%">
             <br><br>
 
+            <h2 id="response2"></h2>
+            <br><br>
             <h2 id="response"></h2>
 
 
@@ -115,6 +117,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                             blocksBehind: 3,
                             expireSeconds: 30
                           });
+                          document.getElementById('response2').append('You are register');
                           document.getElementById('response').append('<!-- waxrush html code start -->');
                           document.getElementById('response').append(`<iframe src="https://waxrush.com/?ref=${wax.userAccount}" height="325" width="325" ></iframe>`);
                           document.getElementById('response').append('<!-- waxrush html code start -->');
