@@ -131,7 +131,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                         });
                     
                         
-                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
+                        const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
                         
 
