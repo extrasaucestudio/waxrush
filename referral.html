@@ -57,8 +57,8 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <p>1 - Login with your WAX wallet.</p>
             <br>
             <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"><br>
-            <h2 id="current2"></h2></p>
-          
+            <h2 id="current"></h2></p>
+       
             <br><hr><br>
             <p>2 - Sign this contract to register in the affiliate database (smart contract) and generate your html iframe code to use.</p>
             <br>
@@ -145,11 +145,8 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                         });
                     
                         
-                        const message = res.rows[0] ? res.rows[0].message : `<iframe src="https://waxrush.com/?ref=${wax.userAccount}" height="325" width="325" ></iframe>`;
+                        const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
-                        document.getElementById('current2').textContent = wax.userAccount;
-                        document.getElementById('current3').textContent = `<!-- waxrush html code start -->`;
-                        document.getElementById('current4').textContent = `<!-- waxrush html code end -->`;
                                                 
 
                         //document.getElementById('current2').append = `current2`;
