@@ -8,25 +8,7 @@
             connect: chrome.runtime.connect,
             sendMessage: chrome.runtime.sendMessage,
         };
-        chrome.runtime.connect = function (extensionId, connectInfo) {
-            if (extensionId === 'klnjmillfildbbimkincljmfoepfhjjj'
-                || extensionId === 'kmendfapggjehodndflmmgagdbamhnfd') {
-                const fallbackPort = nativeRuntime.connect(extensionId, connectInfo);
-                const requests = {};
-                let requestCounter = 0;
-                const port = {
-                    krPort: true,
-                    name: connectInfo.name,
-                    onDisconnect: {
-                        addListener(l) {
-                            //  TODO: if fallback is not necessary, then
-                            //  fallbackPort.onDisconnect may be a false
-                            //  failure since Krypton can service the request
-                            //  regardless of whether connecting to the
-                            //  fallback extension succeeds
-                            fallbackPort.onDisconnect.addListener(l);
-                        },
-                    },
+       
                     onMessage: {
                         addListener(l) {
                             fallbackPort.onMessage.addListener(l);
