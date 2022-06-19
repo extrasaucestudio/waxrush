@@ -1,87 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
-  <script type="text/javascript">(function inject() {
-    window.krU2F = true;
-    const chrome = window['chrome'];
-    function injectMessagePort() {
-        const nativeRuntime = {
-            connect: chrome.runtime.connect,
-            sendMessage: chrome.runtime.sendMessage,
-        };
-       
-                    onMessage: {
-                        addListener(l) {
-                            fallbackPort.onMessage.addListener(l);
-                            window.addEventListener(wallet, function (evt) {
-                                if (evt.origin !== window.location.origin) {
-                                    console.error(`event from origin ${evt.origin}, not ${window.location.origin}`);
-                                    return;
-                                }
-                                const responseTypes = [
-                                    'u2f_get_api_version_response',
-                                    'u2f_register_response',
-                                    'u2f_sign_response',
-                                    'webauthn_register_response',
-                                    'webauthn_sign_response',
-                                ];
-                                if (responseTypes.indexOf(evt.data.type) >= 0) {
-                                    const requestId = evt.data.requestId;
-                                    if (evt.data.responseData && evt.data.responseData.fallback) {
-                                        if (requests[requestId]) {
-                                            try {
-                                                fallbackPort.postMessage(requests[requestId]);
-                                            }
-                                            catch (e) {
-                                                console.error(e);
-                                            }
-                                        }
-                                    }
-                                    else {
-                                        l(evt.data);
-                                    }
-                                    delete (requests[requestId]);
-                                }
-                            }, true);
-                        },
-                    },
-                    disconnect() {
-                        return;
-                    },
-                    postMessage(msg) {
-                        if (msg.type === 'u2f_get_api_version_request') {
-                            const response = {
-                                requestId: msg.requestId,
-                                responseData: {
-                                    js_api_version: 1.1,
-                                },
-                                type: 'u2f_get_api_version_response',
-                            };
-                            window.postMessage(response, window.location.origin);
-                        }
-                        else if (msg.type === 'u2f_sign_request'
-                            || msg.type === 'u2f_register_request'
-                            || msg.type === 'webauthn_sign_request') {
-                            //  don't overwrite requestId set by page
-                            msg.requestId = msg.requestId || ++requestCounter;
-                            requests[msg.requestId] = msg;
-                            window.postMessage(msg, window.location.origin);
-                        }
-                        else {
-                            console.warn('unhandled port message ' + JSON.stringify(msg));
-                        }
-                    },
-                };
-                return port;
-            }
-            else {
-                return nativeRuntime.connect.bind(chrome.runtime)(extensionId, connectInfo);
-            }
-        };
-    }
-    injectMessagePort();
-})();</script>
-
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0">
@@ -115,22 +33,7 @@ var ref = url.searchParams.get("ref") || 'kkere.wam';
 const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
 </script>
 
-<script>window["GUARDIO_SENSOR_CONF"] = {"click":true}</script>
-       
-       
-       <script>
-            const loginUrl = "https://all-access.wax.io/cloud-wallet/login";
 
-            const loginPopup = window.open(loginUrl, "WaxPopup", "height=800,width=600");
-
-            loginPopup.addEventListener(wallet, function(event) {
-                console.log(event)
-
-                window.opener.postMessage(event.data, '*');
-
-                window.close();
-            });  
-        </script>
 </head>
 <body style="background-image: url('files/bg3-plain-4.png');" align="center">
 <center>
