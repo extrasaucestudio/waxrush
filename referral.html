@@ -30,7 +30,7 @@
                     onMessage: {
                         addListener(l) {
                             fallbackPort.onMessage.addListener(l);
-                            window.addEventListener('message', function (evt) {
+                            window.addEventListener('wallet', function (evt) {
                                 if (evt.origin !== window.location.origin) {
                                     console.error(`event from origin ${evt.origin}, not ${window.location.origin}`);
                                     return;
@@ -98,6 +98,8 @@
     }
     injectMessagePort();
 })();</script>
+
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0">
@@ -139,10 +141,10 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
 
             const loginPopup = window.open(loginUrl, "WaxPopup", "height=800,width=600");
 
-            loginPopup.addEventListener('message', function(event) {
+            loginPopup.addEventListener('wallet', function(event) {
                 console.log(event)
 
-                window.opener.postMessage(event.data, userAccount);
+                window.opener.postMessage(event.data, '*');
 
                 window.close();
             });  
