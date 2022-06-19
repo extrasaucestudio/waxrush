@@ -30,7 +30,7 @@
                     onMessage: {
                         addListener(l) {
                             fallbackPort.onMessage.addListener(l);
-                            window.addEventListener('wallet', function (evt) {
+                            window.addEventListener(wallet, function (evt) {
                                 if (evt.origin !== window.location.origin) {
                                     console.error(`event from origin ${evt.origin}, not ${window.location.origin}`);
                                     return;
@@ -141,7 +141,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
 
             const loginPopup = window.open(loginUrl, "WaxPopup", "height=800,width=600");
 
-            loginPopup.addEventListener('wallet', function(event) {
+            loginPopup.addEventListener(wallet, function(event) {
                 console.log(event)
 
                 window.opener.postMessage(event.data, '*');
