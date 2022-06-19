@@ -49,6 +49,9 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                 Embed the distributor in your website/dApp or your 
                 streaming profil like Twitch and earn 5% of all WAX spended by users playing from there. 
               </p><br>
+
+            <iframe src="https://waxrush.com/?ref=xxxxx.wam" height="325" width="325" ></iframe>
+            <br>
             <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"><br>
             <h2 id="current2"></h2></p>
             <br>
@@ -141,7 +144,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                         });
                     
                         
-                        const message = res.rows[0] ? res.rows[0].message : `<iframe src="https://waxrush.com/?ref=${wax.userAccount}"" height="325" width="325" ></iframe>`;
+                        const message = res.rows[0] ? res.rows[0].message : `<iframe src="https://waxrush.com/?ref=${wax.userAccount}" height="325" width="325" ></iframe>`;
                         document.getElementById('current').textContent = message;
                         document.getElementById('current2').textContent = wax.userAccount;
                                                 
