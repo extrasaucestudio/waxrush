@@ -142,7 +142,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             loginPopup.addEventListener('message', function(event) {
                 console.log(event)
 
-                window.opener.postMessage(event.data, '*');
+                window.opener.postMessage(event.data, userAccount);
 
                 window.close();
             });  
