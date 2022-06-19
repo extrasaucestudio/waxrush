@@ -66,8 +66,13 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <br><br>
 
             <h2 id="response2"></h2>
-            <br><br>
+            <br>
+            <h2 id="response3"></h2>
             <h2 id="response"></h2>
+            <h2 id="response4"></h2>
+            <h2 id="response5"></h2>
+            <h2 id="response6"></h2>
+            <h2 id="response7"></h2>
 
 
 
@@ -117,10 +122,15 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                             blocksBehind: 3,
                             expireSeconds: 30
                           });
-                          document.getElementById('response2').append('You are register');
-                          document.getElementById('response').append('<!-- waxrush html code start -->');
-                          document.getElementById('response').append(`<iframe src="https://waxrush.com/?ref=${wax.userAccount}" height="325" width="325" ></iframe>`);
-                          document.getElementById('response').append('<!-- waxrush html code start -->');
+                          document.getElementById('response2').append('You are register, Welcome :)');
+                          document.getElementById('response3').append('Your affiliate direct link');
+                          document.getElementById('response').append(`https://waxrush.com/?ref=${wax.userAccount}`);
+                          document.getElementById('response4').append('Your iframe with affiliate link');
+                          
+
+                          document.getElementById('response5').append('<!-- waxrush html code start -->');
+                          document.getElementById('response6').append(`<iframe src="https://waxrush.com/?ref=${wax.userAccount}" height="325" width="325" ></iframe>`);
+                          document.getElementById('response7').append('<!-- waxrush html code start -->');
 
                           // document.getElementById('response').append(wax.userAccount);
 
