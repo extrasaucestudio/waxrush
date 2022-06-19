@@ -63,20 +63,12 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <p id="current"></p>
             <p id="current4"></p>
 
-            <!--
-              <textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><iframe src='https://waxrush.com/?ref=${wallet}' title='' height='350' width='325' ></iframe></textarea>
-            -->
-                    <br>
                     
-                    <label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden"><br><br>
+                    <label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden">
 
-                  
                     <h2 id="response"></h2>
                     
-
                     <script>
-                      
-                      
                       const wax = new waxjs.WaxJS({
                         rpcEndpoint: 'https://wax.greymass.com'
                       });
