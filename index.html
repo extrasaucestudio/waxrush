@@ -151,12 +151,25 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             </p>
             </section>
         </details>
-      
-        
-
         <br><br>
-          
+        <script>
+          document.write('<a href="index.html?ref=');
+          document.write(ref);
+          document.write('">Home</a>');
+          </script> - 
+          <script>
+            document.write('<a href="referral.html?ref=');
+            document.write(ref);
+            document.write('">Embed this tool$</a>');
+            </script> - 
+          <script>
+            document.write('<a href="https://waxaffiliation.io/?ref=');
+            document.write(ref);
+            document.write('" target="_blank">More tool$</a>');
+            </script>
+          <br><br>
 
+   <!--       
 <p id="show">Embed this tool$</p>
 <script>
     const popup = new dhx.Popup({
@@ -186,7 +199,7 @@ dhxWindow.show();
 
 <br><br>
 
-<!--
+
 <script>
   var affiliatewallet = "affili.wam";
   document.write('<p>');
