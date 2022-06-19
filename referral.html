@@ -54,27 +54,19 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <br>
             <p>iframe</p>
             <br>
-            <p id="current3"></p>
+            <p id="current"></p>
             
             
 
-           
-
-              
-
-            <textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><iframe src='https://waxrush.com/?ref=${wallet}' title='' height='325' width='325' ></iframe></textarea>
-         
+            <!--
+              <textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><iframe src='https://waxrush.com/?ref=${wallet}' title='' height='325' width='325' ></iframe></textarea>
+            -->
             <br>
             <img src="files/waxrush-nft.gif" alt="NFT Distributor" width="20%">
                     <br>
-                    Random NFT distributor (1 WAX)
-
+                    
                     <label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden"><br><br>
 
-                    
-                      <img id="sign" onclick=sign() src="files/insertyourcoin.png" alt="NFT Distributor" width="50%">
-                    <br><br>
-                    
                   
                     <h2 id="response"></h2>
                     
@@ -152,12 +144,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                         const message = res.rows[0] ? res.rows[0].message : `<iframe src="https://waxrush.com/?ref=${wax.userAccount}"" height="325" width="325" ></iframe>`;
                         document.getElementById('current').textContent = message;
                         document.getElementById('current2').textContent = wax.userAccount;
-                        document.getElementById('current3').textContent = `<textarea style="color:rgb(0, 0, 0)" id="w3review" name="w3review" rows="3" cols="50"><iframe src="https://waxrush.com/?ref=${wax.userAccount}"" height="325" width="325" ></iframe></textarea>`;
-                        
-
-
-
-                        
+                                                
 
                         //document.getElementById('current2').append = `current2`;
 
