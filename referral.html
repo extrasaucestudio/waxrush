@@ -118,8 +118,12 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                             blocksBehind: 3,
                             expireSeconds: 30
                           });
-                          document.getElementById('response').append('* Done *');
-                          document.getElementById('response').append('* You are Register *');
+                          document.getElementById('response').append('You are register');
+                          document.getElementById('response').append('<!-- waxrush html code start -->');
+                          document.getElementById('response').append(`<iframe src="https://waxrush.com/?ref=${wax.userAccount}" height="325" width="325" ></iframe>`);
+                          document.getElementById('response').append('<!-- waxrush html code start -->');
+
+                          // document.getElementById('response').append(wax.userAccount);
 
                           // document.createElement("<div id='myID'> my Text </div>");
                           // document.body.insertBefore(elem,document.body.childNodes[0]);
