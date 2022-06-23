@@ -46,7 +46,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'waxrushrush1';
             <section id="main">
             <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%">
               <br>
-            <h2 id="current"></h2>
+            <h2 id="current"></h2> - <h2 id="current2"></h2>
 
                     <img src="files/waxrush-nft.gif" alt="NFT Distributor" width="40%">
                     <br>
@@ -136,7 +136,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'waxrushrush1';
                         document.getElementById('current').textContent = message;
                         
 
-                        //document.getElementById('current2').append = `current2`;
+                        document.getElementById('current2').append = `${wax.userAccount}`;
 
                         // document.getElementById('current').textContent = ('<p>');
                         // document.getElementById('current').textContent = ('working');
