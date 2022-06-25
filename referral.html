@@ -58,7 +58,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
             <br>
             <p><img id="login" onclick=login() src="files/login.png" alt="NFT Distributor" width="30%"></p>
               <br>
-            <h2 id="current"></h2>
+            <h2 id="current"></h2><h2 id="current2"></h2>
        
             <br><hr><br>
             <p><strong>2</strong> - Sign this contract to register in the affiliate database (<a href="https://wax.bloks.io/account/freecitygamx?loadContract=true&tab=Tables&account=freecitygamx" target="_blank">smart contract</a>) and generate your html iframe code to use.
@@ -155,13 +155,14 @@ const affiliate_wallet = url.searchParams.get("ref") || 'kkere.wam';
                           code: 'freecitygamx',
        scope: 'freecitygamx',
        table: 'users',
-       lower_bound: ref,
-       upper_bound: ref,
+       lower_bound: wax.userAccount,
+       upper_bound: wax.userAccount,
                         });
                     
                         
                         const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
                         document.getElementById('current').textContent = message;
+                        document.getElementById('current2').textContent = wax.userAccount;
                         
                         //document.getElementById('current2').append = `current2`;
 
