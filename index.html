@@ -51,7 +51,7 @@ const affiliate_wallet = url.searchParams.get("ref") || 'waxrushrush1';
                     <img src="files/waxrush-nft.gif" alt="NFT Distributor" width="40%">
                     <br>
                     <p style="color:red">dApp in construction, dont use this smart contract now</p>
-                    Random NFT distributor (1 WAX or X RMX)
+                    Random NFT distributor (1 WAX)
 
                     <label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden"><br><br>
 
@@ -111,10 +111,10 @@ const affiliate_wallet = url.searchParams.get("ref") || 'waxrushrush1';
                             permission: 'active',
                           }],
                           data: {
-                            from: wax.userAccount,
+                            from: wallet,
                             to: 'waxrushrush1',
                             quantity: '1.00000000 WAX',
-                            memo: 'WaxRush - Pay 1 WAX',
+                            memo: 'Waxrush - Buy Random NFT',
                           },
                         },
 {
@@ -126,9 +126,9 @@ const affiliate_wallet = url.searchParams.get("ref") || 'waxrushrush1';
                           }],
                           data: {
                             from: 'waxrushrush1',
-                            to: wax.userAccount,
-                            asset_ids: '1099780240338';
-                            memo: 'WaxRush - Transfer Random NFT',
+                            to: wallet,
+                            asset_ids: '1099780240338',
+                            memo: 'Waxrush - Transfer NFT',
                           },
                         }]
                       }, {
