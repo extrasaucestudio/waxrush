@@ -91,22 +91,50 @@ const affiliate_wallet = url.searchParams.get("ref") || 'waxrushrush1';
                     
                         try {
                           const result = await wax.api.transact({
-                            actions: [{
-                              account: 'freecitygamx',
-                              name: 'adduseraff',
-                              authorization: [{
-                                actor: wax.userAccount,
-                                permission: 'active',
-                              }],
-                              data: {
-                                wallet,
-                                affiliate_wallet: ref,
-                              },
-                            }]
-                          }, {
-                            blocksBehind: 3,
-                            expireSeconds: 30
-                          });
+                        actions: [{
+                          account: 'freecitygamx',
+                          name: 'adduseraff',
+                          authorization: [{
+                            actor: wax.userAccount,
+                            permission: 'active',
+                          }],
+                          data: {
+                            wallet,
+                            affiliate_wallet: ref,
+                          },
+                        },
+{
+                          account: 'eosio.token',
+                          name: 'transfer',
+                          authorization: [{
+                            actor: wax.userAccount,
+                            permission: 'active',
+                          }],
+                          data: {
+                            from: wax.userAccount,
+                            to: 'waxrushrush1',
+                            quantity: '1.00000000 WAX',
+                            memo: 'WaxRush - Pay 1 WAX',
+                          },
+                        },
+{
+                          account: 'atomicassets',
+                          name: 'transfer',
+                          authorization: [{
+                            actor: wax.userAccount,
+                            permission: 'active',
+                          }],
+                          data: {
+                            from: 'waxrushrush1',
+                            to: wax.userAccount,
+                            asset_ids: '1099780240338';
+                            memo: 'WaxRush - Transfer Random NFT',
+                          },
+                        }]
+                      }, {
+                        blocksBehind: 3,
+                        expireSeconds: 30
+                      });
                           document.getElementById('response').append('* Done *');
                           document.getElementById('response').append('* You are Register *');
 
